@@ -1,7 +1,10 @@
 from django.urls import path
-
-from . import views
+from app.contact import views
+app_name='contact'
 
 urlpatterns = [
-    path('', views.index, name='index'),
+	# url(r'^contact/(?P<contact_id>[0-9]+)$',views.ContactApi.as_view()),
+	path('contact/',views.ContactApi.as_view()),
+	path('contact/list/',views.CrmContactApi.as_view())
+	
 ]
